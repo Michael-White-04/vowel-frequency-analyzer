@@ -9,9 +9,13 @@ inputs:
     required: true
     default: data.txt
 
+  github-user:
+    description: GitHub username of the contributor
+    required: true
+
 runs:
   using: docker
   image: ../../../Dockerfile
   env:
     FILE: ${{ inputs.file }}
-    GITHUB_USER: ${{ github.actor }}
+    GITHUB_USER: ${{ inputs.github-user }}

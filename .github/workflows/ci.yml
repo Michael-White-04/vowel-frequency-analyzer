@@ -27,6 +27,7 @@ jobs:
         uses: ./.github/actions/vowel-frequency-analyzer
         with:
           file: data.txt
+          github-user: ${{ github.actor }}
 
       - name: Verify Analysis Results
         run: |
